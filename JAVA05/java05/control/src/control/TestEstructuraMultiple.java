@@ -6,6 +6,8 @@ public class TestEstructuraMultiple {
 		EstructuraMultiple em = new EstructuraMultiple();
 		//em.vocal();
 		em.notas();
+		em.ternario();
+		em.tresN();
 
 	}
 
