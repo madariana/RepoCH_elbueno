@@ -6,7 +6,7 @@ let lNueva = lista.map(
         return valor * 2
     }
 )
-console.log(lNueva);
+document.write(lNueva);
 
 
 //SORT EN ORDEN MENOR A MAYOR

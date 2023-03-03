@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\madar\OneDrive\Escritorio\CH23\RepoCH23_elbueno\JAVA\.metadata\.plugins\org.eclipse.jdt.core
+539670598.index
+1865797976.index
+2286210796.index
