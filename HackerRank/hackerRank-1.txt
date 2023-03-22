@@ -1,0 +1,297 @@
+HACKER RANK EJERCICIO 1:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        scanner.close();
+        if (N % 2 == 0){
+            if (N >= 2 && N <=5) {
+                System.out.println("Not Weird");
+            }
+            else if (N >= 6 && N <=20) {
+                System.out.println("Weird");
+            }
+            else if (N > 20) {
+                System.out.println("Not Weird");
+            }
+        }
+        else {
+        System.out.println("Weird");
+    }
+    }
+
+}
+
+HACKER RANK EJERCICIO 2:
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            
+            for (int j=0; j<n; j++) {
+                a = a+b;
+                System.out.print(a+" ");
+                b = b*2;
+            } 
+            System.out.println("");
+        }
+        
+        in.close();
+    }
+}
+
+EJERCICIO 3
+
+import java.io.*;
+
+import java.math.*;
+
+import java.security.*;
+
+import java.text.*;
+
+import java.util.*;
+
+import java.util.concurrent.*;
+
+import java.util.regex.*;
+
+
+
+
+public class Solution {
+
+
+
+
+    // Complete the plusMinus function below.
+
+    static void plusMinus(int[] arr) {
+
+        float p=0;
+
+        float n=0;
+
+        float z=0;
+
+        for(int i=0;i<arr.length;i++){
+
+            if(arr[i] == 0){
+
+                z++;
+
+            }
+
+            else{
+
+                if(arr[i] > 0){
+
+                    p++;
+
+                }
+
+                else{
+
+                    n++;
+
+                }
+
+            }
+
+        }
+
+        p/= arr.length;
+
+        n/= arr.length;
+
+        z/= arr.length;
+
+        System.out.println(p);
+
+        System.out.println(n);
+
+        System.out.println(z);
+
+    }
+
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+
+
+
+    public static void main(String[] args) {
+
+        int n = scanner.nextInt();
+
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+
+
+
+        int[] arr = new int[n];
+
+
+
+
+        String[] arrItems = scanner.nextLine().split(" ");
+
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+
+
+
+        for (int i = 0; i < n; i++) {
+
+            int arrItem = Integer.parseInt(arrItems[i]);
+
+            arr[i] = arrItem;
+
+        }
+
+
+
+
+        plusMinus(arr);
+
+
+
+
+        scanner.close();
+
+    }
+
+}
+
+
+HACKER RANK EJERCICIO 4:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.lang.reflect.*;
+import static java.lang.System.in;
+
+class Prime{
+    public void checkPrime(int... arr){//2 1 3 4 5
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<2){
+                
+            }else if(arr[i]==2){
+                System.out.print(arr[i]+" ");//2
+            }
+            else{
+                int logic = 1;
+                for(int j=2;j<arr[i];j++){
+                    if(arr[i]%j==0){
+                        logic = 0;
+                        break;
+                    }
+                }
+                if(logic==1){
+                    System.out.print(arr[i]+" ");//3 5
+                }
+            }
+        }
+        System.out.println();
+    }
+}
+public class Solution {
+    
+
+    public static void main(String[] args) {
+                try{
+        BufferedReader br=new BufferedReader(new InputStreamReader(in));
+        int n1=Integer.parseInt(br.readLine());
+        int n2=Integer.parseInt(br.readLine());
+        int n3=Integer.parseInt(br.readLine());
+        int n4=Integer.parseInt(br.readLine());
+        int n5=Integer.parseInt(br.readLine());
+        Prime ob=new Prime();
+        ob.checkPrime(n1);
+        ob.checkPrime(n1,n2);
+        ob.checkPrime(n1,n2,n3);
+        ob.checkPrime(n1,n2,n3,n4,n5);  
+        Method[] methods=Prime.class.getDeclaredMethods();
+        Set<String> set=new HashSet<>();
+        boolean overload=false;
+        for(int i=0;i<methods.length;i++)
+        {
+            if(set.contains(methods[i].getName()))
+            {
+                overload=true;
+                break;
+            }
+            set.add(methods[i].getName());
+            
+        }
+        if(overload)
+        {
+            throw new Exception("Overloading not allowed");
+        }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}
+
+
+HACKER RANK EJERCICIO 5:
+//Complete this code or write your own from scratch
+import java.util.*;
+import java.io.*;
+
+class Solution{
+	public static void main(String []argh)
+	{
+		Scanner in = new Scanner(System.in);
+		int n=in.nextInt();
+		in.nextLine();
+        HashMap<String,Integer> hm = new HashMap<>();
+		for(int i=0;i<n;i++)
+		{
+			String name=in.nextLine();
+			int phone=in.nextInt();
+            hm.put(name,phone);
+			in.nextLine();
+		}
+		while(in.hasNext())
+		{
+			String s=in.nextLine();
+             if(hm.containsKey(s)){
+                System.out.println(s+"="+hm.get(s));
+            }else{
+                System.out.println("Not found");
+            }
+		}
+	}
+}
